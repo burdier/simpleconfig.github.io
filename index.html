@@ -57,7 +57,8 @@
 
     <h2>Step 1: Run the Script Below</h2>
     <p>Copy and paste the following command into your terminal:</p>
-    <pre><code>curl -fsSL https://raw.githubusercontent.com/burdier/simpleconfig.github.io/main/dotnet_zsh_script.sh | sed -e '$i\' -e '$(cat)' >> ~/.zshrc</code></pre>
+    <pre><code>curl -fsSL https://raw.githubusercontent.com/burdier/simpleconfig.github.io/main/dotnet_zsh_script.sh -o /tmp/dotnet_zsh_script.sh && { sed '$d' ~/.zshrc; cat /tmp/dotnet_zsh_script.sh; tail -n 1 ~/.zshrc; } > ~/.zshrc.tmp && mv ~/.zshrc.tmp ~/.zshrc && source ~/.zshrc
+</code></pre>
 
     <h2>Step 2: Reload Your .zshrc</h2>
     <p>After running the command, reload your <code>.zshrc</code> to apply the changes:</p>
