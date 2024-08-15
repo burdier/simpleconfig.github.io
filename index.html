@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insert .NET Zsh Configuration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #444;
+        }
+        pre {
+            background-color: #282c34;
+            color: #abb2bf;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            color: #e06c75;
+        }
+        .button {
+            background-color: #007acc;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-top: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Insert .NET Zsh Configuration</h1>
+    <p>This script will automatically download a snippet from GitHub and insert it before the last line in your <code>.zshrc</code> file.</p>
+
+    <h2>What Does the <code>enter_dotnet_dir</code> Function Do?</h2>
+    <p>The <code>enter_dotnet_dir</code> function is designed to enhance your Zsh shell experience when working with .NET projects. Here’s how it works:</p>
+    <ul>
+        <li><strong>Checks if the last command was <code>cd</code>:</strong> The function first checks if the previous command was <code>cd</code>. If it was, the function does nothing to avoid repetitive executions.</li>
+        <li><strong>Detects a Git repository:</strong> If the current directory contains a Git repository, the function proceeds.</li>
+        <li><strong>Looks for a .NET solution file:</strong> The function searches for a <code>.sln</code> file within a depth of 5 directories. If found, it continues.</li>
+        <li><strong>Lists available projects:</strong> It lists the directories containing <code>.csproj</code> files and uses <code>fzf</code> to allow you to select which project to navigate to.</li>
+        <li><strong>Handles directory permissions:</strong> Before navigating to the selected project directory, it checks for read and execute permissions. If permissions are granted, it navigates to the directory and shows the path using <code>lolcat</code>.</li>
+        <li><strong>Displays informative messages:</strong> All key messages (like navigation success or failure to find files) are displayed using <code>lolcat</code> for colorful output.</li>
+    </ul>
+
+    <h2>Step 1: Run the Script Below</h2>
+    <p>Copy and paste the following command into your terminal:</p>
+    <pre><code>curl -fsSL https://raw.githubusercontent.com/burdier/simpleconfig/main/dotnet_zsh_config.sh | sed -e '$i\' -e '$(cat)' >> ~/.zshrc</code></pre>
+
+    <h2>Step 2: Reload Your .zshrc</h2>
+    <p>After running the command, reload your <code>.zshrc</code> to apply the changes:</p>
+    <pre><code>source ~/.zshrc</code></pre>
+
+    <h2>Step 3: Enjoy Your Customized Zsh Environment</h2>
+    <p>Your Zsh prompt is now configured to handle .NET projects with helpful features and colorful output using <code>lolcat</code>.</p>
+</body>
+</html>
+
