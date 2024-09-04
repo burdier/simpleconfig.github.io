@@ -60,12 +60,42 @@
     <pre><code>curl -fsSL https://raw.githubusercontent.com/burdier/simpleconfig.github.io/main/dotnet_zsh_script.sh -o /tmp/dotnet_zsh_script.sh && { sed '$d' ~/.zshrc; cat /tmp/dotnet_zsh_script.sh; tail -n 1 ~/.zshrc; } > ~/.zshrc.tmp && mv ~/.zshrc.tmp ~/.zshrc && source ~/.zshrc
 </code></pre>
 
-    <h2>Step 2: Reload Your .zshrc</h2>
-    <p>After running the command, reload your <code>.zshrc</code> to apply the changes:</p>
+    <h2>Step 2: Add .NET Aliases</h2>
+    <p>To make working with .NET commands faster, consider adding these aliases to your <code>.zshrc</code>:</p>
+    <pre><code># Alias .NET
+alias dt-rn='dotnet run'
+alias dt-bl='dotnet build'
+alias dt-pb='dotnet publish'
+alias dt-cl='dotnet clean'
+alias dt-rt='dotnet restore'
+alias dt-tst='dotnet test'
+alias dt-wt='dotnet watch'
+alias dt-mg='dotnet migrate'
+alias dt-nw='dotnet new'
+alias dt-adp='dotnet add package'
+alias dt-adref='dotnet add reference'
+alias dt-rmref='dotnet remove reference'
+alias dt-rmpkg='dotnet remove package'
+alias dt-lsproj='dotnet list project'
+alias dt-lspkg='dotnet list package'
+alias dt-inf='dotnet info'
+alias dt-v='dotnet --version'
+alias dt-glb='dotnet tool install --global'
+alias dt-uplb='dotnet tool update --global'
+alias dt-rmlb='dotnet tool uninstall --global'
+alias dt-tl='dotnet tool list'
+alias dt-cfg='dotnet user-secrets init'
+alias dt-cfgset='dotnet user-secrets set'
+alias dt-cfgget='dotnet user-secrets list'
+alias dt-cfgclr='dotnet user-secrets clear'</code></pre>
+
+    <h2>Step 3: Reload Your .zshrc</h2>
+    <p>After running the script and adding the aliases, reload your <code>.zshrc</code> to apply the changes:</p>
     <pre><code>source ~/.zshrc</code></pre>
 
-    <h2>Step 3: Enjoy Your Customized Zsh Environment</h2>
-    <p>Your Zsh prompt is now configured to handle .NET projects with helpful features and colorful output using <code>lolcat</code>.</p>
+    <h2>Step 4: Enjoy Your Customized Zsh Environment</h2>
+    <p>Your Zsh prompt is now configured to handle .NET projects with helpful features and aliases to streamline your workflow.</p>
 </body>
 </html>
+
 
