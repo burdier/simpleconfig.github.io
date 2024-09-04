@@ -1,3 +1,31 @@
+# Alias .NET
+alias dt-rn='dotnet run'
+alias dt-bl='dotnet build'
+alias dt-pb='dotnet publish'
+alias dt-cl='dotnet clean'
+alias dt-rt='dotnet restore'
+alias dt-tst='dotnet test'
+alias dt-wt='dotnet watch'
+alias dt-mg='dotnet migrate'
+alias dt-nw='dotnet new'
+alias dt-adp='dotnet add package'
+alias dt-adref='dotnet add reference'
+alias dt-rmref='dotnet remove reference'
+alias dt-rmpkg='dotnet remove package'
+alias dt-lsproj='dotnet list project'
+alias dt-lspkg='dotnet list package'
+alias dt-inf='dotnet info'
+alias dt-v='dotnet --version'
+alias dt-glb='dotnet tool install --global'
+alias dt-uplb='dotnet tool update --global'
+alias dt-rmlb='dotnet tool uninstall --global'
+alias dt-tl='dotnet tool list'
+alias dt-cfg='dotnet user-secrets init'
+alias dt-cfgset='dotnet user-secrets set'
+alias dt-cfgget='dotnet user-secrets list'
+alias dt-cfgclr='dotnet user-secrets clear'
+
+
 #dotnet script
 function check_cd_command() {
   # Obtener el último comando del historial
